@@ -21,17 +21,10 @@ from matplotlib.backends.backend_webagg import (
     FigureManagerWebAgg, new_figure_manager_given_figure)
 import matplotlib.pyplot as plt
 
+# import script to create the figure
+from create_figure import create_figure
+
 port = 8080
-
-def create_figure():
-    """Creates a simple example figure."""
-
-    f, ax = plt.subplots()
-    ax.plot([1,2,3,4,5], "-o")
-    ax.plot([5,4,3,2,1], "-o")
-
-    return f
-
 
 class MyApplication(tornado.web.Application):
     figures = dict()
